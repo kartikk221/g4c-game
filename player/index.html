@@ -1,111 +1,362 @@
-<html><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/g4c_game/images/logo.png">
-    <meta name="author" content="KartikK.">
-    <meta name="description" content="Game Entry For Games4Change Student Challenge">
-    <meta name="keywords" content="">
-    <meta charset="UTF-8">
-    <title>SwiftScale</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
-    <link href="/g4c_game/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/g4c_game/css/main.css">
-    <script src="/g4c_game/js/pixi.min.js" name="PixiJS_Library"></script>
-    <script src="/g4c_game/js/pixi-layers.js" name="PixiJS_Layering_Plugin"></script>
-    <script src="/g4c_game/js/bump.js" name="PixiJS_Collisons_Library"></script>
-    <script src="/g4c_game/js/jquery.min.js" name="Jquery_Library"></script>
-    <script src="/g4c_game/js/iziModal.min.js" name="Modal_Library"></script>
-    <link rel="stylesheet" href="/g4c_game/css/iziModal.min.css" name="Modal_Library_Css">
-    <script src="/g4c_game/js/sweetalert.min.js" name="Alerts Library!"></script>
-    <script src="/g4c_game/js/keyboard_controller.js" name="keyboard_controller_handler"></script>
-    <script src="/g4c_game/js/operators.js" name="Global_Operator_Functions"></script>
- </head>
- <body>
-     <div name="loader" class="page-loader">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-cloudy" style="display: block; width: 25%; height: 20%;margin: auto; margin-top: 15%;"><g transform="translate(0 18)"><path ng-attr-fill="{{config.c1}}" d="M53.2,30.3c0.4-1.3,0.6-2.7,0.6-4.2c0-1.2-0.1-2.3-0.4-3.4c-1.5-6-7-10.5-13.5-10.5 c-5.3,0-9.9,3-12.3,7.4c-0.9-0.3-1.8-0.4-2.8-0.4c-5.1,0-9.3,4.1-9.3,9.3c0,0.6,0.1,1.3,0.2,1.9c-4.7,0.7-8.3,4.8-8.3,9.7 c0,5.4,4.4,9.8,9.8,9.8h34.2c3.8,0,7.1-2.2,8.8-5.4c0.7-1.3,1.1-2.9,1.1-4.5C61.4,35.2,57.8,31.1,53.2,30.3z" fill="#ffffff" transform="translate(-2.85625 0)"><animateTransform attributeName="transform" type="translate" values="-3 0;3 0;-3 0" keyTimes="0;0.5;1" ng-attr-dur="{{config.speed1}}" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" dur="2"></animateTransform></path><defs><path id="cpp" d="M0,0v100h100V0H0z M62.9,44.4c-1.7,3.4-5.3,5.8-9.4,5.8H17c-5.8,0-10.5-4.7-10.5-10.5 c0-5.2,3.8-9.6,8.9-10.4c-0.1-0.6-0.2-1.3-0.2-2c0-5.5,4.4-9.9,9.9-9.9c1,0,2,0.2,3,0.5c2.5-4.7,7.4-7.9,13.1-7.9 c6.9,0,12.8,4.8,14.4,11.2c0.3,1.2,0.4,2.4,0.4,3.6c0,1.6-0.2,3.1-0.7,4.5c5,0.8,8.7,5.2,8.7,10.3C64,41.3,63.6,43,62.9,44.4z" transform="translate(-2.85625 0)"><animateTransform attributeName="transform" type="translate" values="-3 0;3 0;-3 0" keyTimes="0;0.5;1" ng-attr-dur="{{config.speed1}}" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" dur="2"></animateTransform></path><clipPath id="cp"><use href="#cpp"></use></clipPath></defs><g clip-path="url(#cp)"><path ng-attr-fill="{{config.c2}}" d="M84.9,28.9c0.4-1.1,0.6-2.3,0.6-3.5c0-1-0.1-1.9-0.4-2.8 c-1.3-5-6.1-8.7-11.8-8.7c-4.6,0-8.7,2.5-10.7,6.1c-0.8-0.2-1.6-0.4-2.4-0.4c-4.5,0-8.1,3.4-8.1,7.6c0,0.5,0.1,1,0.2,1.5 c-4.1,0.6-7.2,4-7.2,8c0,4.5,3.8,8.1,8.6,8.1h29.8c3.3,0,6.2-1.8,7.7-4.4c0.6-1.1,0.9-2.3,0.9-3.7C92,32.9,88.9,29.6,84.9,28.9z" fill="#ffffff" transform="translate(2.15975 0)"><animateTransform attributeName="transform" type="translate" values="-3 0;3 0;-3 0" keyTimes="0;0.5;1" ng-attr-dur="{{config.speed2}}" repeatCount="indefinite" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1" dur="1.32"></animateTransform></path></g></g></svg>
-         <h1 class="loader-text">Loading...</h1>
-    </div>
-    <div class="fader" id="fader"></div>
-    <div id="top_left_ui_window" class="game-ui-box-small" style="width: 350px;
-    height: 240px;">
-        <h2 style="font-size: 25px;"><strong style="color: #08AEEA">Current Job: </strong> Job #<g id="currentJob">1</g></h2><h2 style="font-size: 25px;"><strong style="color: #08AEEA">Building Floor: </strong> <g id="buildingFloor">1st</g> Floor</h2><h2 style="font-size: 25px; margin-bottom: 0px;"><strong style="color: #08AEEA">Time Remaining: </strong></h2><h2 style="font-size: 20px; margin-top: 10px;"><g id="time_minutes">0</g> minute(s) <g id="time_seconds">0</g> seconds</h2>    
-    </div>
-    <div id="controls" class="iziModal" data-izimodal-title="Controls" data-izimodal-subtitle="Drone Movement">
-        <img src="/g4c_game/images/controls.png" style="width: 100%; display: block; margin: auto;">
-        <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Use the controls above to operate your drone to deliver packages.</strong> </h2>
-        <div style="text-align: center;">
-            <button class="missionUI-button" id="controls_finished">Let's Start</button>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="shortcut icon" href="/images/logo.png" />
+        <meta name="author" content="KartikK." />
+        <meta name="description" content="Game Entry For Games4Change Student Challenge" />
+        <meta name="keywords" content="" />
+        <meta charset="UTF-8" />
+        <title>SwiftScale</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet" />
+        <link href="/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <script src="/js/pixi.min.js" name="PixiJS_Library"></script>
+        <script src="/js/pixi-layers.js" name="PixiJS_Layering_Plugin"></script>
+        <script src="/js/bump.js" name="PixiJS_Collisons_Library"></script>
+        <script src="/js/jquery.min.js" name="Jquery_Library"></script>
+        <script src="/js/iziModal.min.js" name="Modal_Library"></script>
+        <link rel="stylesheet" href="/css/iziModal.min.css" name="Modal_Library_Css" />
+        <script src="/js/sweetalert.min.js" name="Alerts Library!"></script>
+        <script src="/js/keyboard_controller.js" name="keyboard_controller_handler"></script>
+        <script src="/js/operators.js" name="Global_Operator_Functions"></script>
+    </head>
+    <body>
+        <div name="loader" class="page-loader">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+                class="lds-cloudy"
+                style="display: block; width: 25%; height: 20%; margin: auto; margin-top: 15%"
+            >
+                <g transform="translate(0 18)">
+                    <path
+                        ng-attr-fill="{{config.c1}}"
+                        d="M53.2,30.3c0.4-1.3,0.6-2.7,0.6-4.2c0-1.2-0.1-2.3-0.4-3.4c-1.5-6-7-10.5-13.5-10.5 c-5.3,0-9.9,3-12.3,7.4c-0.9-0.3-1.8-0.4-2.8-0.4c-5.1,0-9.3,4.1-9.3,9.3c0,0.6,0.1,1.3,0.2,1.9c-4.7,0.7-8.3,4.8-8.3,9.7 c0,5.4,4.4,9.8,9.8,9.8h34.2c3.8,0,7.1-2.2,8.8-5.4c0.7-1.3,1.1-2.9,1.1-4.5C61.4,35.2,57.8,31.1,53.2,30.3z"
+                        fill="#ffffff"
+                        transform="translate(-2.85625 0)"
+                    >
+                        <animateTransform
+                            attributeName="transform"
+                            type="translate"
+                            values="-3 0;3 0;-3 0"
+                            keyTimes="0;0.5;1"
+                            ng-attr-dur="{{config.speed1}}"
+                            repeatCount="indefinite"
+                            calcMode="spline"
+                            keySplines="0.5 0 0.5 1;0.5 0 0.5 1"
+                            dur="2"
+                        ></animateTransform>
+                    </path>
+                    <defs>
+                        <path
+                            id="cpp"
+                            d="M0,0v100h100V0H0z M62.9,44.4c-1.7,3.4-5.3,5.8-9.4,5.8H17c-5.8,0-10.5-4.7-10.5-10.5 c0-5.2,3.8-9.6,8.9-10.4c-0.1-0.6-0.2-1.3-0.2-2c0-5.5,4.4-9.9,9.9-9.9c1,0,2,0.2,3,0.5c2.5-4.7,7.4-7.9,13.1-7.9 c6.9,0,12.8,4.8,14.4,11.2c0.3,1.2,0.4,2.4,0.4,3.6c0,1.6-0.2,3.1-0.7,4.5c5,0.8,8.7,5.2,8.7,10.3C64,41.3,63.6,43,62.9,44.4z"
+                            transform="translate(-2.85625 0)"
+                        >
+                            <animateTransform
+                                attributeName="transform"
+                                type="translate"
+                                values="-3 0;3 0;-3 0"
+                                keyTimes="0;0.5;1"
+                                ng-attr-dur="{{config.speed1}}"
+                                repeatCount="indefinite"
+                                calcMode="spline"
+                                keySplines="0.5 0 0.5 1;0.5 0 0.5 1"
+                                dur="2"
+                            ></animateTransform>
+                        </path>
+                        <clipPath id="cp"><use href="#cpp"></use></clipPath>
+                    </defs>
+                    <g clip-path="url(#cp)">
+                        <path
+                            ng-attr-fill="{{config.c2}}"
+                            d="M84.9,28.9c0.4-1.1,0.6-2.3,0.6-3.5c0-1-0.1-1.9-0.4-2.8 c-1.3-5-6.1-8.7-11.8-8.7c-4.6,0-8.7,2.5-10.7,6.1c-0.8-0.2-1.6-0.4-2.4-0.4c-4.5,0-8.1,3.4-8.1,7.6c0,0.5,0.1,1,0.2,1.5 c-4.1,0.6-7.2,4-7.2,8c0,4.5,3.8,8.1,8.6,8.1h29.8c3.3,0,6.2-1.8,7.7-4.4c0.6-1.1,0.9-2.3,0.9-3.7C92,32.9,88.9,29.6,84.9,28.9z"
+                            fill="#ffffff"
+                            transform="translate(2.15975 0)"
+                        >
+                            <animateTransform
+                                attributeName="transform"
+                                type="translate"
+                                values="-3 0;3 0;-3 0"
+                                keyTimes="0;0.5;1"
+                                ng-attr-dur="{{config.speed2}}"
+                                repeatCount="indefinite"
+                                calcMode="spline"
+                                keySplines="0.5 0 0.5 1;0.5 0 0.5 1"
+                                dur="1.32"
+                            ></animateTransform>
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <h1 class="loader-text">Loading...</h1>
         </div>
-    </div>
-    <div id="mission_objective" class="iziModal" data-izimodal-title="Current Objective" data-izimodal-subtitle="Confused?">
-        <h1 class="objective-reason" style="padding: 15px; font-size: 25px;"><strong>Objective: </strong> <g id="objective_display"></g></h1>
-        <h2 class="objective-whatodo" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong id="objective_nextstep"></strong> </h2>
-        <div style="text-align: center;">
-            <button class="missionUI-button" id="objective_understood">Got It!</button>
+        <div class="fader" id="fader"></div>
+        <div id="top_left_ui_window" class="game-ui-box-small" style="width: 350px; height: 240px">
+            <h2 style="font-size: 25px">
+                <strong style="color: #08aeea">Current Job: </strong> Job #<g id="currentJob">1</g>
+            </h2>
+            <h2 style="font-size: 25px">
+                <strong style="color: #08aeea">Building Floor: </strong>
+                <g id="buildingFloor">1st</g> Floor
+            </h2>
+            <h2 style="font-size: 25px; margin-bottom: 0px">
+                <strong style="color: #08aeea">Time Remaining: </strong>
+            </h2>
+            <h2 style="font-size: 20px; margin-top: 10px">
+                <g id="time_minutes">0</g> minute(s) <g id="time_seconds">0</g> seconds
+            </h2>
         </div>
-    </div>
-    <div id="job1" class="iziModal" data-izimodal-title="Job #1" data-izimodal-subtitle="Available">
-            <img src="/g4c_game/images/mission1.png" style="width: 100%; display: block; margin: auto;">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Synopsis: </strong> This is your first day on the job, so you are given an easy task to deliver a package to floor #2. You must not crash into other drones and finish the mission in a timely manner.</h1>
-            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px;"><strong>Time Limit:</strong> 20 seconds</h1>
-            <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Complete Job #1 to unlock Job #2</strong> </h2>
-            <div style="text-align: center;">
+        <div
+            id="controls"
+            class="iziModal"
+            data-izimodal-title="Controls"
+            data-izimodal-subtitle="Drone Movement"
+        >
+            <img src="/images/controls.png" style="width: 100%; display: block; margin: auto" />
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong>Use the controls above to operate your drone to deliver packages.</strong>
+            </h2>
+            <div style="text-align: center">
+                <button class="missionUI-button" id="controls_finished">Let's Start</button>
+            </div>
+        </div>
+        <div
+            id="mission_objective"
+            class="iziModal"
+            data-izimodal-title="Current Objective"
+            data-izimodal-subtitle="Confused?"
+        >
+            <h1 class="objective-reason" style="padding: 15px; font-size: 25px">
+                <strong>Objective: </strong> <g id="objective_display"></g>
+            </h1>
+            <h2
+                class="objective-whatodo"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong id="objective_nextstep"></strong>
+            </h2>
+            <div style="text-align: center">
+                <button class="missionUI-button" id="objective_understood">Got It!</button>
+            </div>
+        </div>
+        <div
+            id="job1"
+            class="iziModal"
+            data-izimodal-title="Job #1"
+            data-izimodal-subtitle="Available"
+        >
+            <img src="/images/mission1.png" style="width: 100%; display: block; margin: auto" />
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Synopsis: </strong> This is your first day on the job, so you are given an
+                easy task to deliver a package to floor #2. You must not crash into other drones and
+                finish the mission in a timely manner.
+            </h1>
+            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
+                <strong>Time Limit:</strong> 20 seconds
+            </h1>
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong>Complete Job #1 to unlock Job #2</strong>
+            </h2>
+            <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_1">Start Job #1</button>
             </div>
         </div>
-        <div id="job2" class="iziModal" data-izimodal-title="Job #2" data-izimodal-subtitle="Locked">
-            <img src="/g4c_game/images/mission2.png" style="width: 100%; display: block; margin: auto;">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Synopsis: </strong> Now that you have some experience, let's deliver two packages. You must deliver two packages on floors #2 and #6 respectively. You must not crash into other drones and finish the mission in a timely manner.</h1>
-            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px;"><strong>Time Limit:</strong> 20 seconds</h1>
-            <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Complete Job #2 to unlock Job #3</strong> </h2>
-            <div style="text-align: center;">
+        <div
+            id="job2"
+            class="iziModal"
+            data-izimodal-title="Job #2"
+            data-izimodal-subtitle="Locked"
+        >
+            <img src="/images/mission2.png" style="width: 100%; display: block; margin: auto" />
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Synopsis: </strong> Now that you have some experience, let's deliver two
+                packages. You must deliver two packages on floors #2 and #6 respectively. You must
+                not crash into other drones and finish the mission in a timely manner.
+            </h1>
+            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
+                <strong>Time Limit:</strong> 20 seconds
+            </h1>
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong>Complete Job #2 to unlock Job #3</strong>
+            </h2>
+            <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_2">Locked</button>
             </div>
         </div>
-        <div id="job3" class="iziModal" data-izimodal-title="Job #3" data-izimodal-subtitle="Locked">
-            <img src="/g4c_game/images/mission3.png" style="width: 100%; display: block; margin: auto;">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Synopsis: </strong> Great Job! It seems that you are an efficient operator with two packages. You will now have to deliver three packages on floors #2, #6, and #12. You must not crash into other drones and finish the mission in a timely manner.</h1>
-            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px;"><strong>Time Limit:</strong> 30 seconds</h1>
-            <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Complete Job #3 to unlock Job #4</strong> </h2>
-            <div style="text-align: center;">
+        <div
+            id="job3"
+            class="iziModal"
+            data-izimodal-title="Job #3"
+            data-izimodal-subtitle="Locked"
+        >
+            <img src="/images/mission3.png" style="width: 100%; display: block; margin: auto" />
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Synopsis: </strong> Great Job! It seems that you are an efficient operator
+                with two packages. You will now have to deliver three packages on floors #2, #6, and
+                #12. You must not crash into other drones and finish the mission in a timely manner.
+            </h1>
+            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
+                <strong>Time Limit:</strong> 30 seconds
+            </h1>
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong>Complete Job #3 to unlock Job #4</strong>
+            </h2>
+            <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_3">Locked</button>
             </div>
         </div>
-        <div id="job4" class="iziModal" data-izimodal-title="Job #4" data-izimodal-subtitle="Locked">
-            <img src="/g4c_game/images/mission2.png" style="width: 100%; display: block; margin: auto;">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Synopsis: </strong> Wow! You delivered three packages without any problems. It seems you are ready to setup up to the harder tasks. You will now have to deliver four packages on floors #2, #6, #12, and #15. You must not crash into other drones and finish the mission in a timely manner.</h1>
-            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px;"><strong>Time Limit:</strong> 40 seconds</h1>
-            <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Complete Job #4 to unlock Job #5</strong> </h2>
-            <div style="text-align: center;">
+        <div
+            id="job4"
+            class="iziModal"
+            data-izimodal-title="Job #4"
+            data-izimodal-subtitle="Locked"
+        >
+            <img src="/images/mission2.png" style="width: 100%; display: block; margin: auto" />
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Synopsis: </strong> Wow! You delivered three packages without any problems.
+                It seems you are ready to setup up to the harder tasks. You will now have to deliver
+                four packages on floors #2, #6, #12, and #15. You must not crash into other drones
+                and finish the mission in a timely manner.
+            </h1>
+            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
+                <strong>Time Limit:</strong> 40 seconds
+            </h1>
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong>Complete Job #4 to unlock Job #5</strong>
+            </h2>
+            <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_4">Locked</button>
             </div>
         </div>
-        <div id="job5" class="iziModal" data-izimodal-title="Job #5" data-izimodal-subtitle="Locked">
-            <img src="/g4c_game/images/mission5.png" style="width: 100%; display: block; margin: auto;">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Synopsis: </strong> Amazing! It seems you are ready for the hardest job. You will now have to deliver five packages on floors #2, #6, #12, #15, and #17. You must not crash into other drones and finish the mission in a timely manner.</h1>
-            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px;"><strong>Time Limit:</strong> 50 seconds</h1>
-            <h2 class="mission-disclaimer" style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center;"><strong>Complete Job #5 to complete your training and become a professional operator!</strong> </h2>
-            <div style="text-align: center;">
+        <div
+            id="job5"
+            class="iziModal"
+            data-izimodal-title="Job #5"
+            data-izimodal-subtitle="Locked"
+        >
+            <img src="/images/mission5.png" style="width: 100%; display: block; margin: auto" />
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Synopsis: </strong> Amazing! It seems you are ready for the hardest job. You
+                will now have to deliver five packages on floors #2, #6, #12, #15, and #17. You must
+                not crash into other drones and finish the mission in a timely manner.
+            </h1>
+            <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
+                <strong>Time Limit:</strong> 50 seconds
+            </h1>
+            <h2
+                class="mission-disclaimer"
+                style="
+                    padding-left: 15px;
+                    font-size: 20px;
+                    color: rgb(8, 174, 234);
+                    text-align: center;
+                "
+            >
+                <strong
+                    >Complete Job #5 to complete your training and become a professional
+                    operator!</strong
+                >
+            </h2>
+            <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_5">Locked</button>
             </div>
         </div>
 
-        <div id="mission_failed" class="iziModal" data-izimodal-title="Job Failed" data-izimodal-subtitle="Please Try Again">
-            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px;"><strong>Reason: </strong> <g id="job_fail_reason"> Your drone collided with another drone!</g></h1>
-            <div style="text-align: center;">
-                <button class="missionUI-button" style="background: #bd5b5b; border-color: #bd5b5b;" id="view_jobs">Go to Jobs</button>
+        <div
+            id="mission_failed"
+            class="iziModal"
+            data-izimodal-title="Job Failed"
+            data-izimodal-subtitle="Please Try Again"
+        >
+            <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
+                <strong>Reason: </strong>
+                <g id="job_fail_reason"> Your drone collided with another drone!</g>
+            </h1>
+            <div style="text-align: center">
+                <button
+                    class="missionUI-button"
+                    style="background: #bd5b5b; border-color: #bd5b5b"
+                    id="view_jobs"
+                >
+                    Go to Jobs
+                </button>
             </div>
         </div>
 
-        <div id="mission_success" class="iziModal" data-izimodal-title="Job Complete" data-izimodal-subtitle="Congratulations">
-                <h1 class="manager-notes" style="padding: 15px; font-size: 25px;"><strong>Manager Notes: </strong> <g id="manager_notes"> Great Job on completing </g></h1>
-                <h1 class="mission-reward" style="padding: 15px; font-size: 25px; text-align: center; color: #84fab0;"><strong id="reward">Manager Notes: </strong> </h1>
-                <div style="text-align: center;">
-                    <button class="missionUI-button" style="background: #84fab0; border-color: #84fab0;" id="view_jobs_success">Go to Jobs</button>
-                </div>
+        <div
+            id="mission_success"
+            class="iziModal"
+            data-izimodal-title="Job Complete"
+            data-izimodal-subtitle="Congratulations"
+        >
+            <h1 class="manager-notes" style="padding: 15px; font-size: 25px">
+                <strong>Manager Notes: </strong> <g id="manager_notes"> Great Job on completing </g>
+            </h1>
+            <h1
+                class="mission-reward"
+                style="padding: 15px; font-size: 25px; text-align: center; color: #84fab0"
+            >
+                <strong id="reward">Manager Notes: </strong>
+            </h1>
+            <div style="text-align: center">
+                <button
+                    class="missionUI-button"
+                    style="background: #84fab0; border-color: #84fab0"
+                    id="view_jobs_success"
+                >
+                    Go to Jobs
+                </button>
+            </div>
         </div>
 
-
-    <div id="game_ui_buttons_holder" class="gameUI-button-holder">
+        <div id="game_ui_buttons_holder" class="gameUI-button-holder">
             <div class="type-1">
                 <div>
                     <a href="javascript: restartMission();" class="gameUI-button">
@@ -113,25 +364,26 @@
                         <span class="round"><i class="fa fa-undo fa-lg"></i></span>
                     </a>
                     <a href="javascript: loadMissions();" class="gameUI-button">
-                            <span class="gameUI-button-text">Missions</span>
-                            <span class="round"><i class="fa fa-chevron-circle-up fa-lg"></i></span>
+                        <span class="gameUI-button-text">Missions</span>
+                        <span class="round"><i class="fa fa-chevron-circle-up fa-lg"></i></span>
                     </a>
                     <a href="javascript: missionObjective();" class="gameUI-button">
-                            <span class="gameUI-button-text">Objective</span>
-                            <span class="round"><i class="fa fa-question fa-lg"></i></span>
+                        <span class="gameUI-button-text">Objective</span>
+                        <span class="round"><i class="fa fa-question fa-lg"></i></span>
                     </a>
                 </div>
             </div>
-    </div>
-    <script src="/g4c_game/js/player/gameui.js"></script>
-    <script src="/g4c_game/js/player/world.js"></script>
-    <script src="/g4c_game/js/player/setup.js"></script>
-    <script src="/g4c_game/js/player/handlers.js"></script>
-    <script src="/g4c_game/js/player/sprites.js"></script>
-    <script>
-    $("#top_left_ui_window").css({
-            width: (400 * HSR) + "px",
-            height: (240 * VSR) + "px"
-        });
-    </script>
-</body></html>
+        </div>
+        <script src="/js/player/gameui.js"></script>
+        <script src="/js/player/world.js"></script>
+        <script src="/js/player/setup.js"></script>
+        <script src="/js/player/handlers.js"></script>
+        <script src="/js/player/sprites.js"></script>
+        <script>
+            $('#top_left_ui_window').css({
+                width: 400 * HSR + 'px',
+                height: 240 * VSR + 'px',
+            });
+        </script>
+    </body>
+</html>
