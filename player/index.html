@@ -10,15 +10,19 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet" />
         <link href="/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="/css/main.css" />
-        <script src="/js/pixi.min.js" name="PixiJS_Library"></script>
-        <script src="/js/pixi-layers.js" name="PixiJS_Layering_Plugin"></script>
-        <script src="/js/bump.js" name="PixiJS_Collisons_Library"></script>
-        <script src="/js/jquery.min.js" name="Jquery_Library"></script>
-        <script src="/js/iziModal.min.js" name="Modal_Library"></script>
+        <script src="/js/pixi.min.js" name="PixiJS_Library" type="application/javascript"></script>
+        <script src="/js/pixi-layers.js" name="PixiJS_Layering_Plugin" type="application/javascript"></script>
+        <script src="/js/bump.js" name="PixiJS_Collisons_Library" type="application/javascript"></script>
+        <script src="/js/jquery.min.js" name="Jquery_Library" type="application/javascript"></script>
+        <script src="/js/iziModal.min.js" name="Modal_Library" type="application/javascript"></script>
         <link rel="stylesheet" href="/css/iziModal.min.css" name="Modal_Library_Css" />
-        <script src="/js/sweetalert.min.js" name="Alerts Library!"></script>
-        <script src="/js/keyboard_controller.js" name="keyboard_controller_handler"></script>
-        <script src="/js/operators.js" name="Global_Operator_Functions"></script>
+        <script src="/js/sweetalert.min.js" name="Alerts Library!" type="application/javascript"></script>
+        <script
+            src="/js/keyboard_controller.js"
+            name="keyboard_controller_handler"
+            type="application/javascript"
+        ></script>
+        <script src="/js/operators.js" name="Global_Operator_Functions" type="application/javascript"></script>
     </head>
     <body>
         <div name="loader" class="page-loader">
@@ -108,21 +112,11 @@
                 <g id="time_minutes">0</g> minute(s) <g id="time_seconds">0</g> seconds
             </h2>
         </div>
-        <div
-            id="controls"
-            class="iziModal"
-            data-izimodal-title="Controls"
-            data-izimodal-subtitle="Drone Movement"
-        >
+        <div id="controls" class="iziModal" data-izimodal-title="Controls" data-izimodal-subtitle="Drone Movement">
             <img src="/images/controls.png" style="width: 100%; display: block; margin: auto" />
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong>Use the controls above to operate your drone to deliver packages.</strong>
             </h2>
@@ -141,12 +135,7 @@
             </h1>
             <h2
                 class="objective-whatodo"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong id="objective_nextstep"></strong>
             </h2>
@@ -154,29 +143,18 @@
                 <button class="missionUI-button" id="objective_understood">Got It!</button>
             </div>
         </div>
-        <div
-            id="job1"
-            class="iziModal"
-            data-izimodal-title="Job #1"
-            data-izimodal-subtitle="Available"
-        >
+        <div id="job1" class="iziModal" data-izimodal-title="Job #1" data-izimodal-subtitle="Available">
             <img src="/images/mission1.png" style="width: 100%; display: block; margin: auto" />
             <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
-                <strong>Synopsis: </strong> This is your first day on the job, so you are given an
-                easy task to deliver a package to floor #2. You must not crash into other drones and
-                finish the mission in a timely manner.
+                <strong>Synopsis: </strong> This is your first day on the job, so you are given an easy task to deliver
+                a package to floor #2. You must not crash into other drones and finish the mission in a timely manner.
             </h1>
             <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
                 <strong>Time Limit:</strong> 20 seconds
             </h1>
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong>Complete Job #1 to unlock Job #2</strong>
             </h2>
@@ -184,29 +162,19 @@
                 <button class="missionUI-button" id="start_job_1">Start Job #1</button>
             </div>
         </div>
-        <div
-            id="job2"
-            class="iziModal"
-            data-izimodal-title="Job #2"
-            data-izimodal-subtitle="Locked"
-        >
+        <div id="job2" class="iziModal" data-izimodal-title="Job #2" data-izimodal-subtitle="Locked">
             <img src="/images/mission2.png" style="width: 100%; display: block; margin: auto" />
             <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
-                <strong>Synopsis: </strong> Now that you have some experience, let's deliver two
-                packages. You must deliver two packages on floors #2 and #6 respectively. You must
-                not crash into other drones and finish the mission in a timely manner.
+                <strong>Synopsis: </strong> Now that you have some experience, let's deliver two packages. You must
+                deliver two packages on floors #2 and #6 respectively. You must not crash into other drones and finish
+                the mission in a timely manner.
             </h1>
             <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
                 <strong>Time Limit:</strong> 20 seconds
             </h1>
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong>Complete Job #2 to unlock Job #3</strong>
             </h2>
@@ -214,29 +182,19 @@
                 <button class="missionUI-button" id="start_job_2">Locked</button>
             </div>
         </div>
-        <div
-            id="job3"
-            class="iziModal"
-            data-izimodal-title="Job #3"
-            data-izimodal-subtitle="Locked"
-        >
+        <div id="job3" class="iziModal" data-izimodal-title="Job #3" data-izimodal-subtitle="Locked">
             <img src="/images/mission3.png" style="width: 100%; display: block; margin: auto" />
             <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
-                <strong>Synopsis: </strong> Great Job! It seems that you are an efficient operator
-                with two packages. You will now have to deliver three packages on floors #2, #6, and
-                #12. You must not crash into other drones and finish the mission in a timely manner.
+                <strong>Synopsis: </strong> Great Job! It seems that you are an efficient operator with two packages.
+                You will now have to deliver three packages on floors #2, #6, and #12. You must not crash into other
+                drones and finish the mission in a timely manner.
             </h1>
             <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
                 <strong>Time Limit:</strong> 30 seconds
             </h1>
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong>Complete Job #3 to unlock Job #4</strong>
             </h2>
@@ -244,30 +202,19 @@
                 <button class="missionUI-button" id="start_job_3">Locked</button>
             </div>
         </div>
-        <div
-            id="job4"
-            class="iziModal"
-            data-izimodal-title="Job #4"
-            data-izimodal-subtitle="Locked"
-        >
+        <div id="job4" class="iziModal" data-izimodal-title="Job #4" data-izimodal-subtitle="Locked">
             <img src="/images/mission2.png" style="width: 100%; display: block; margin: auto" />
             <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
-                <strong>Synopsis: </strong> Wow! You delivered three packages without any problems.
-                It seems you are ready to setup up to the harder tasks. You will now have to deliver
-                four packages on floors #2, #6, #12, and #15. You must not crash into other drones
-                and finish the mission in a timely manner.
+                <strong>Synopsis: </strong> Wow! You delivered three packages without any problems. It seems you are
+                ready to setup up to the harder tasks. You will now have to deliver four packages on floors #2, #6, #12,
+                and #15. You must not crash into other drones and finish the mission in a timely manner.
             </h1>
             <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
                 <strong>Time Limit:</strong> 40 seconds
             </h1>
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
                 <strong>Complete Job #4 to unlock Job #5</strong>
             </h2>
@@ -275,34 +222,21 @@
                 <button class="missionUI-button" id="start_job_4">Locked</button>
             </div>
         </div>
-        <div
-            id="job5"
-            class="iziModal"
-            data-izimodal-title="Job #5"
-            data-izimodal-subtitle="Locked"
-        >
+        <div id="job5" class="iziModal" data-izimodal-title="Job #5" data-izimodal-subtitle="Locked">
             <img src="/images/mission5.png" style="width: 100%; display: block; margin: auto" />
             <h1 class="mission-synopsis" style="padding: 15px; font-size: 25px">
-                <strong>Synopsis: </strong> Amazing! It seems you are ready for the hardest job. You
-                will now have to deliver five packages on floors #2, #6, #12, #15, and #17. You must
-                not crash into other drones and finish the mission in a timely manner.
+                <strong>Synopsis: </strong> Amazing! It seems you are ready for the hardest job. You will now have to
+                deliver five packages on floors #2, #6, #12, #15, and #17. You must not crash into other drones and
+                finish the mission in a timely manner.
             </h1>
             <h1 class="mission-time-limit" style="margin-left: 15px; font-size: 25px">
                 <strong>Time Limit:</strong> 50 seconds
             </h1>
             <h2
                 class="mission-disclaimer"
-                style="
-                    padding-left: 15px;
-                    font-size: 20px;
-                    color: rgb(8, 174, 234);
-                    text-align: center;
-                "
+                style="padding-left: 15px; font-size: 20px; color: rgb(8, 174, 234); text-align: center"
             >
-                <strong
-                    >Complete Job #5 to complete your training and become a professional
-                    operator!</strong
-                >
+                <strong>Complete Job #5 to complete your training and become a professional operator!</strong>
             </h2>
             <div style="text-align: center">
                 <button class="missionUI-button" id="start_job_5">Locked</button>
@@ -320,11 +254,7 @@
                 <g id="job_fail_reason"> Your drone collided with another drone!</g>
             </h1>
             <div style="text-align: center">
-                <button
-                    class="missionUI-button"
-                    style="background: #bd5b5b; border-color: #bd5b5b"
-                    id="view_jobs"
-                >
+                <button class="missionUI-button" style="background: #bd5b5b; border-color: #bd5b5b" id="view_jobs">
                     Go to Jobs
                 </button>
             </div>
@@ -339,10 +269,7 @@
             <h1 class="manager-notes" style="padding: 15px; font-size: 25px">
                 <strong>Manager Notes: </strong> <g id="manager_notes"> Great Job on completing </g>
             </h1>
-            <h1
-                class="mission-reward"
-                style="padding: 15px; font-size: 25px; text-align: center; color: #84fab0"
-            >
+            <h1 class="mission-reward" style="padding: 15px; font-size: 25px; text-align: center; color: #84fab0">
                 <strong id="reward">Manager Notes: </strong>
             </h1>
             <div style="text-align: center">
